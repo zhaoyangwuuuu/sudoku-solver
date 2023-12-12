@@ -22,9 +22,18 @@ impl eframe::App for SudokuSolver {
             ui.add_space(10.0);
             self.draw_grid(ui);
             ui.add_space(10.0);
-            if ui.button("Solve Sudoku").clicked() {
-                self.solve_sudoku();
-            }
+            ui.horizontal(|ui| {
+                if ui.button("Reset").clicked() {
+                    self.reset_grid();
+                }
+                if ui.button("Solve Sudoku").clicked() {
+                    let solvable = self.solve_sudoku();
+                    if !solvable {
+                        self.show_unsolvable_message();
+                    }
+                }
+            });
+            self.draw_unsolvable_popup(ctx);
         });
     }
 }
