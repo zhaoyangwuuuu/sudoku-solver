@@ -41,12 +41,6 @@ cargo run
 
 This command will compile the code and launch the Sudoku Solver application.
 
-## TODO
-
-- [ ] Add unit tests
-- [ ] Add a popup message to inform the user when a puzzle is not solvable
-- [ ] Add a reset button
-
 ## License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
